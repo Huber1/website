@@ -14,7 +14,7 @@ it done.
 
 ### 1. Find out the type of Motherboard you have
 
--- picture here --
+![Motherboard Picture](/blog-assets/ender-5-firmware-update/motherboard.png)
 
 Ender printers come with multiple possible motherboards. The most important difference is that some are 8-bit and some
 are 32-bit.
