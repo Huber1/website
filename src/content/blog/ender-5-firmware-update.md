@@ -1,7 +1,14 @@
 ---
-title: 'How to update the Creality Ender 5 firmware'
-description: 'A detailed guide to update your ender 5 firmware, because i didn''t find a satisfying guide online'
-pubDate: 'Jul 31 2023'
+author: Moritz Huber
+pubDatetime: 2023-07-31
+title: How to update the Creality Ender 5 firmware
+postSlug: ender-5-firmware-update
+featured: true
+draft: false
+tags:
+  - 3d-druck
+ogImage: ""
+description: A detailed guide to update your ender 5 firmware, because i didn't find a satisfying guide online
 ---
 
 Today I wanted to update the firmware of my Ender-5 Pro 3d-printer because I want to install a cr-touch sensor to
