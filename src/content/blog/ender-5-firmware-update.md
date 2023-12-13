@@ -7,7 +7,6 @@ featured: true
 draft: false
 tags:
   - 3d-druck
-ogImage: ""
 description: A detailed guide to update your ender 5 firmware, because i didn't find a satisfying guide online
 ---
 
@@ -21,7 +20,7 @@ it done.
 
 ### 1. Find out the type of Motherboard you have
 
-![Motherboard Picture](/blog-assets/ender-5-firmware-update/motherboard.png)
+![Motherboard Picture](@assets/ender-5-firmware-update/motherboard.png)
 
 Ender printers come with multiple possible motherboards. The most important difference is that some are 8-bit and some
 are 32-bit.

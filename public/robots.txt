@@ -1,4 +1,0 @@
-User-agent: GPTBot
-Disallow: /
-
-Sitemap: https://moritzhuber.de/sitemap-index.xml

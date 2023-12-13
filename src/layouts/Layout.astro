@@ -1,6 +1,8 @@
 ---
 import { SITE } from "@config";
 import "@styles/base.css";
+import "@styles/fonts.css";
+import { ViewTransitions } from "astro:transitions";
 
 const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
 
@@ -21,12 +23,12 @@ const {
 } = Astro.props;
 
 const socialImageURL = new URL(
-  ogImage ? ogImage : SITE.ogImage,
+  ogImage ?? SITE.ogImage ?? "og.png",
   Astro.url.origin
 ).href;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -55,100 +57,13 @@ const socialImageURL = new URL(
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={socialImageURL} />
 
-    <!-- Google Font -->
-    <!--<link rel="preconnect" href="https://fonts.googleapis.com" />-->
-    <!--<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />-->
-    <!--<link-->
-    <!--  href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap"-->
-    <!--  rel="stylesheet"-->
-    <!--/>-->
 
-    <!-- Fonts -->
-    <style>
-      /* ibm-plex-mono-regular - latin */
-      @font-face {
-        font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-        font-family: "IBM Plex Mono";
-        font-style: normal;
-        font-weight: 400;
-        src: url("/blog-assets/fonts/ibm-plex-mono-v19-latin/ibm-plex-mono-v19-latin-regular.woff2")
-            format("woff2"),
-          /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-            url("/blog-assets/fonts/ibm-plex-mono-v19-latin/ibm-plex-mono-v19-latin-regular.ttf")
-            format("truetype"); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
-      }
-
-      /* ibm-plex-mono-italic - latin */
-      @font-face {
-        font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-        font-family: "IBM Plex Mono";
-        font-style: italic;
-        font-weight: 400;
-        src: url("/blog-assets/fonts/ibm-plex-mono-v19-latin/ibm-plex-mono-v19-latin-italic.woff2")
-            format("woff2"),
-          /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-            url("/blog-assets/fonts/ibm-plex-mono-v19-latin/ibm-plex-mono-v19-latin-italic.ttf")
-            format("truetype"); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
-      }
-
-      /* ibm-plex-mono-500 - latin */
-      @font-face {
-        font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-        font-family: "IBM Plex Mono";
-        font-style: normal;
-        font-weight: 500;
-        src: url("/blog-assets/fonts/ibm-plex-mono-v19-latin/ibm-plex-mono-v19-latin-500.woff2")
-            format("woff2"),
-          /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-            url("/blog-assets/fonts/ibm-plex-mono-v19-latin/ibm-plex-mono-v19-latin-500.ttf")
-            format("truetype"); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
-      }
-
-      /* ibm-plex-mono-600 - latin */
-      @font-face {
-        font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-        font-family: "IBM Plex Mono";
-        font-style: normal;
-        font-weight: 600;
-        src: url("/blog-assets/fonts/ibm-plex-mono-v19-latin/ibm-plex-mono-v19-latin-600.woff2")
-            format("woff2"),
-          /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-            url("/blog-assets/fonts/ibm-plex-mono-v19-latin/ibm-plex-mono-v19-latin-600.ttf")
-            format("truetype"); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
-      }
-
-      /* ibm-plex-mono-600italic - latin */
-      @font-face {
-        font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-        font-family: "IBM Plex Mono";
-        font-style: italic;
-        font-weight: 600;
-        src: url("/blog-assets/fonts/ibm-plex-mono-v19-latin/ibm-plex-mono-v19-latin-600italic.woff2")
-            format("woff2"),
-          /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-            url("/blog-assets/fonts/ibm-plex-mono-v19-latin/ibm-plex-mono-v19-latin-600italic.ttf")
-            format("truetype"); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
-      }
-
-      /* ibm-plex-mono-700 - latin */
-      @font-face {
-        font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-        font-family: "IBM Plex Mono";
-        font-style: normal;
-        font-weight: 700;
-        src: url("/blog-assets/fonts/ibm-plex-mono-v19-latin/ibm-plex-mono-v19-latin-700.woff2")
-            format("woff2"),
-          /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-            url("/blog-assets/fonts/ibm-plex-mono-v19-latin/ibm-plex-mono-v19-latin-700.ttf")
-            format("truetype"); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
-      }
-    </style>
+    <meta name="theme-color" content="" />
 
     {
       // If PUBLIC_GOOGLE_SITE_VERIFICATION is set in the environment variable,
       // include google-site-verification tag in the heading
       // Learn more: https://support.google.com/webmasters/answer/9008080#meta_tag_verification&zippy=%2Chtml-tag
-
       googleSiteVerification && (
         <meta
           name="google-site-verification"
@@ -156,6 +71,8 @@ const socialImageURL = new URL(
         />
       )
     }
+
+    <ViewTransitions />
 
     <script is:inline src="/toggle-theme.js"></script>
   </head>
