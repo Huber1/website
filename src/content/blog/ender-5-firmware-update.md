@@ -2,7 +2,7 @@
 author: Moritz Huber
 pubDatetime: 2023-07-31
 title: How to update the Creality Ender 5 firmware
-postSlug: ender-5-firmware-update
+slug: ender-5-firmware-update
 featured: true
 draft: false
 tags:
