@@ -7,6 +7,7 @@ featured: true
 draft: false
 tags:
   - 3d-druck
+  - 3d printing
 description: A detailed guide to update your ender 5 firmware, because i didn't find a satisfying guide online
 ---
 
