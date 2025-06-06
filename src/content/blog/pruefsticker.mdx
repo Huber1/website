@@ -1,0 +1,62 @@
+---
+title: Prüfsticker
+description: Lustige Sticker in anlehnung an VDE Prüfsticker
+pubDatetime: 2025-06-06
+featured: true
+draft: false
+tags:
+  - sticker
+  - design
+ogImage: ../../assets/pruefsticker/sticker.png
+---
+
+import { Picture } from "astro:assets";
+import Provisorium_seit from "../../assets/pruefsticker/Provisorium_seit.png";
+import Technisch_fragwuerdig from "../../assets/pruefsticker/Technisch_fragwuerdig.png";
+import Broken_since from "../../assets/pruefsticker/Broken_since.png";
+
+Seit einiger Zeit geistern ja auf CCC-Events diverse Prüfsticker mit netten Texten wie "Provisorium seit" oder
+"technisch fragwürdig" durch die Gegend.
+
+Da ich, zusammen mit einigen Freunden definitiv ein paar mehr dieser Art gebrauchen könnte,
+habe ich mich auf die Suche nach dem Ursprung der Sticker gemacht.
+
+Bei einer Aktion im Forum von [Fingers elektrische Welt](https://www.fingers-welt.de/phpBB/viewtopic.php?t=19190) gab es
+bereits einmal eine größere Bestellung der Sticker.
+
+Nachdem ich die svg-Dateien nicht einfach auf das aktuelle Datum ändern konnte, habe ich sie kurzerhand in Inkscape
+nachgezeichnet.
+
+<div className="flex flex-row gap-4">
+  <Picture
+    src={Provisorium_seit}
+    formats={["avif", "webp"]}
+    alt="Provisorium seit Sticker"
+  />
+  <Picture
+    src={Technisch_fragwuerdig}
+    formats={["avif", "webp"]}
+    alt="Technisch fragwürdig Sticker"
+  />
+  <Picture
+    src={Broken_since}
+    formats={["avif", "webp"]}
+    alt="Broken since Sticker"
+  />
+</div>
+
+## Download
+
+Die Sticker sind `30x30mm` groß und sind in 4 Varianten als svg verfügbar:
+
+- Normal
+- `path`
+- `border`
+- `border_path`
+
+[sticker.zip](/assets/pruefsticker/sticker.zip)
+
+Bei den `path`-Varianten sind alle Objekte in Pfade umgewandelt und laden somit auch ohne installierte Schriften und sehen überall gleich aus.
+Diese Version würde ich zum Drucken nehmen. Die "normale" Variante ist hauptsächlich dafür da, falls man irgendwann mal das Datum anpassen muss.
+
+Die `border`-Varianten sind etwas größer (`37x37mm`). Hier gehen die Linien über die Schnittkante, um kleine Ungenauigkeiten beim Zuschneiden auszugleichen.
